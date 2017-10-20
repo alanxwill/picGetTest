@@ -70,7 +70,7 @@ def idSearch():
 def favoritePicture():
     idPage = 'http://api.topitme.com/?appVersion=508&device=ios&build=4.3.13&ipad=NO&ch=AppStore&openudid=8760362a232719eb2c1bd3d745bcc1e20bf310ad&screen=1242x2208&id=' + inputString + '&method=user.get&offset=0&limit=30'
     idJson = getJson(idPage)
-    favoritePictureUrl = idJson['item']
+    favoritePictureUrl = idJson['info']["sbj"]['icon']['url']
     favoritePictureNum = idJson['info']['num']
     favoritePictureUrlList = []
     urlParts = idPage.split('&')
